@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:42:15 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 21:41:23 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:41:53 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int		print(char *format, t_able *table)
 	return (num_chars);
 }
 
-
 int		ft_printf(const char *format, ...)
 {
 	va_list	a_list;
@@ -81,25 +80,3 @@ int		ft_printf(const char *format, ...)
 	table = generate_table(out, a_list, &num);
 	return (print(out, table));
 }
-/*
-int		ft_printf(const char *format, ...)
-{
-	va_list	a_list;
-	char	*out;
-	t_able	*table;
-	int		num;
-	int		i;
-
-	out = ft_strdup(format);
-	va_start(a_list, format);
-	table = generate_table(out, a_list, &num);
-	i = 0;
-	while (i < num)
-	{
-		out = replace(out, table[i].format.str, table[i].output);
-		++i;
-	}
-	num = ft_strlen(out);
-	ft_putstrn(out, num);
-	return (num);
-}*/

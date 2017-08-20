@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:47:06 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 20:38:26 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:37:51 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ void	set_tmp_uns(t_able *table)
 		table->tmp = ft_jutoa(table->data.ju, table->format.type);
 	else if (table->format.length == 6)
 		table->tmp = ft_zutoa(table->data.z, table->format.type);
-
 }

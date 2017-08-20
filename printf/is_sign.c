@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 22:33:10 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:32:46 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:38:46 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		is_sign(t_able *table)
 	{
 		if (is_neg(table))
 			return (1);
-		else if (check_plus(table))// || check_space(table))
+		else if (check_plus(table))
 			return (1);
 	}
 	return (0);

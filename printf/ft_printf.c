@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:42:15 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 20:03:28 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 20:23:41 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		is_null(t_able *table)
 
 void	ft_put(t_able *table, int *t, int *i, int *num_chars)
 {
-	if ((TYPE == 'S' || (TYPE == 's' && LENGTH == 3)) ||
-		(TYPE == 'C' || (TYPE == 'c' && LENGTH == 3)))
+	if ((TYPE == 'S' || (TYPE == 's' && (LENGTH == 3 || LENGTH == 4))) ||
+		(TYPE == 'C' || (TYPE == 'c' && (LENGTH == 3 || LENGTH == 4))))
 	{
 		*i += ft_strlen(table->format.str);
 		++*t;

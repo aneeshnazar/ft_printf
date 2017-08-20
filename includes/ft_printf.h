@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:01:59 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:30:07 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/20 13:54:45 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ void					handle_space(t_able *table);
 char					*zero_str(int num);
 int						is_sign(t_able *table);
 int						is_neg(t_able *table);
+int						is_good(t_able *table);
 char					get_sign(t_able *table);
 void					fix_sign(t_able *table);
 

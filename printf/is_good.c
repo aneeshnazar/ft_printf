@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_tmp.c                                          :+:      :+:    :+:   */
+/*   is_good.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/10 19:09:27 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 13:16:52 by anazar           ###   ########.fr       */
+/*   Created: 2017/08/20 13:54:13 by anazar            #+#    #+#             */
+/*   Updated: 2017/08/20 13:54:26 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	set_tmp(t_able *table)
+int		is_good(t_able *table)
 {
-	if (ft_is_in(table->format.type, "sS"))
-		set_tmp_str(table);
-	else if (ft_is_in(table->format.type, "dDi"))
-		set_tmp_int(table);
-	else if (ft_is_in(table->format.type, "puUoOxX"))
-		set_tmp_uns(table);
-	else if (ft_is_in(table->format.type, "cC%"))
-		set_tmp_char(table);
+	if ((TYPE == 'S' || (TYPE == 's' && LENGTH == 4)) ||
+		(TYPE == 'C' || (TYPE == 'c' && LENGTH == 4)))
+		return (0);
+	else if (ft_is_in(TYPE, "spdDioOuUxXc%"))
+		return (1);
 	else
-		set_tmp_char(table);
+		return (0);
 }

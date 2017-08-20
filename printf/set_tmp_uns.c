@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:47:06 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:37:51 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/20 13:29:33 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	set_tmp_uns(t_able *table)
 {
-	if (ft_is_in(table->format.type, "UO") || table->format.length == 3)
+	if (ft_is_in(table->format.type, "UO") || table->format.length == 4)
 		table->tmp = ft_lutoa(table->data.lu, table->format.type);
 	else if (table->format.type == 'p')
 	{
@@ -27,7 +27,7 @@ void	set_tmp_uns(t_able *table)
 		table->tmp = ft_hhutoa(table->data.hhu, table->format.type);
 	else if (table->format.length == 2)
 		table->tmp = ft_hutoa(table->data.hu, table->format.type);
-	else if (table->format.length == 4)
+	else if (table->format.length == 3)
 		table->tmp = ft_llutoa(table->data.llu, table->format.type);
 	else if (table->format.length == 5)
 		table->tmp = ft_jutoa(table->data.ju, table->format.type);

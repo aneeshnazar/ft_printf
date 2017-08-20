@@ -6,7 +6,7 @@
 #    By: anazar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2017/08/19 22:30:24 by anazar           ###   ########.fr        #
+#    Updated: 2017/08/20 13:54:58 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_max ft_memalloc 
 				ft_strcat ft_strdel ft_strdup ft_strfncpy ft_strjoinfree ft_strlen \
 				ft_strnew ft_strrncpy ft_strsub ft_tolower ft_bzero ft_isupper \
 				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp ft_min
-MAIN = replace is_sign is_neg zero_str
+MAIN = replace is_sign is_neg zero_str is_good
 #GET = get_one_format get_formats generate_table
 GET = get_f_strs get_format generate_table get_width get_sign
 SET = set_char set_int set_uint set_addr set_data set_str \

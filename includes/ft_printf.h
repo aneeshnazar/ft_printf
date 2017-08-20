@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:01:59 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:14:36 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:30:07 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ int						check_minus(t_able *table);
 int						check_space(t_able *table);
 void					handle_hash(t_able *table);
 void					handle_zero(t_able *table);
+void					handle_space(t_able *table);
 
 char					*zero_str(int num);
 int						is_sign(t_able *table);

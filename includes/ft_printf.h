@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:01:59 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 19:06:30 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:14:36 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char					*ft_zutoa(size_t n, char base);
 char					*replace(char *str, char *to_find, char *to_replace);
 wchar_t					*ft_wstrdup(wchar_t *str);
 
-int						parse_flags(t_format *t, char *format, int *start);
+void					parse_flags(t_format *t, char *format, int *start);
 int						parse_length(t_format *t, char *format, int *start);
 void					parse_width(t_format *t, char *format, int *start);
 void					parse_precision(t_format *t, char *format, int *start);

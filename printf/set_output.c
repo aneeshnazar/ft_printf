@@ -6,25 +6,20 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 23:14:33 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 21:55:47 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 21:58:14 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	handle_output(t_able *table, int precision, int width)
+void	handle_output(t_able *table, int precision)
 {
 	if (check_minus(table))
 	{
 		if (!is_sign(table))
 			ft_strfncpy(OUTPUT, table->tmp, precision);
 		else
-		{
-			free(OUTPUT);
-			OUTPUT = ft_strnew(width + 1);
-			ft_memset(OUTPUT, ' ', width + 1);
 			ft_strfncpy(OUTPUT + 1, table->tmp, precision);
-		}
 	}
 	else
 		ft_strrncpy(OUTPUT, table->tmp, precision);
@@ -68,7 +63,7 @@ void	set_output(t_able *table)
 	if (!*table->tmp && TYPE == 'c')
 		handle_null(table);
 	else
-		handle_output(table, precision, width);
+		handle_output(table, precision);
 	handle_zero(table);
 	append_sign(table);
 }

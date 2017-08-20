@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 22:09:54 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/09 14:24:31 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 19:30:59 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	set_char(t_able *table, va_list a_list)
 	else if (table->format.type == 'c' && !table->format.length)
 		table->data.c = va_arg(a_list, int);
 	else
-		table->data.lc = va_arg(a_list, wchar_t);
+		table->data.lc = va_arg(a_list, wint_t);
 }

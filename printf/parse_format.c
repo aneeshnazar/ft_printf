@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/26 13:39:50 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 19:45:48 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 19:54:32 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ t_format		parse_format(char *str)
 	parse_precision(&new_f, str, &pos);
 	parse_length(&new_f, str, &pos);
 	parse_type(&new_f, str, &pos);
-	ft_putchar(new_f.type);
-	ft_putchar('\n');
 	return (new_f);
 }

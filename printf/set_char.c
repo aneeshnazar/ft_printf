@@ -6,18 +6,19 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 22:09:54 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 19:30:59 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 19:36:52 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <inttypes.h>
 
 void	set_char(t_able *table, va_list a_list)
 {
 	if (table->format.type == '%')
 		table->data.c = '%';
 	else if (table->format.type == 'c' && !table->format.length)
-		table->data.c = va_arg(a_list, int);
+		table->data.c = (char)va_arg(a_list, int);
 	else
-		table->data.lc = va_arg(a_list, wint_t);
+		table->data.lc = (wchar_t)va_arg(a_list, wint_t);
 }

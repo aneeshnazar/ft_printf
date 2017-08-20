@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/28 19:40:38 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 20:22:45 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 20:25:06 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,12 @@ t_able	*generate_table(char *format, va_list a_list, int *num)
 	{
 		out[i].format = formats[i];
 		set_data(&out[i], a_list);
-		ft_putendl("data set");
 		if ((out[i].format.type == 'S' || (out[i].format.type == 's' &&
 			(out[i].format.length == 3 || out[i].format.length == 4))) ||
 			(out[i].format.type == 'C' || (out[i].format.type == 'c' &&
 			(out[i].format.length == 3 || out[i].format.length == 4))))
-			ft_putendl("wchar");
 		else
 			set_output(&out[i]);
-		ft_putendl("output set");
 		++i;
 	}
 	return (out);

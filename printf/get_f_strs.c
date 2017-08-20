@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/23 17:34:33 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/13 23:50:23 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 21:37:26 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ char	**get_f_strs(char *format, int *size)
 	out = (char **)ft_memalloc(sizeof(char *) * *size);
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i])
 		{
 			out[out_it] = ft_copy_until(format, i);
+			i += ft_strlen(out[out_it]);
 			++out_it;
 		}
-		++i;
+		else
+			++i;
 	}
 	return (out);
 }

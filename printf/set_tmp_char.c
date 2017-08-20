@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:59:42 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 19:41:02 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 19:49:29 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	set_tmp_char(t_able *table)
 {
-	if (ft_is_in(table->format.type, "c%"))
+	if (ft_is_in(table->format.type, "c%") && !table->format.length)
 		table->tmp = ft_ctos(table->data.c);
-/*	else
-		table->wtmp = ft_wctos(table->data.lc);*/
+	else
+		table->wtmp = ft_wctos(table->data.lc);
 }

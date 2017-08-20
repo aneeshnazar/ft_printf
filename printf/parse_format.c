@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/26 13:39:50 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:14:59 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 22:15:58 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_format		parse_format(char *str)
 	pos = 1;
 	new_f.str = ft_strdup(str);
 	new_f.is_good = 0;	
-	parse_flags(&new_f, str, &pos) == -1;
+	parse_flags(&new_f, str, &pos);
 	parse_width(&new_f, str, &pos);
 	parse_precision(&new_f, str, &pos);
 	if (parse_length(&new_f, str, &pos) == -1)

@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/28 19:40:38 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 20:25:06 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/19 20:25:57 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_able	*generate_table(char *format, va_list a_list, int *num)
 			(out[i].format.length == 3 || out[i].format.length == 4))) ||
 			(out[i].format.type == 'C' || (out[i].format.type == 'c' &&
 			(out[i].format.length == 3 || out[i].format.length == 4))))
+			;
 		else
 			set_output(&out[i]);
 		++i;

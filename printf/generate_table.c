@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/28 19:40:38 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:34:12 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 16:32:21 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ t_able		*generate_table(char *format, va_list a_list, int *num)
 			set_output(&out[i]);
 		++i;
 	}
+	free(formats);
 	return (out);
 }

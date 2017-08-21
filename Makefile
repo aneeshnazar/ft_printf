@@ -6,7 +6,7 @@
 #    By: anazar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2017/08/21 15:35:27 by anazar           ###   ########.fr        #
+#    Updated: 2017/08/21 16:38:52 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LIBFT_SRCS = $(addprefix $(LIBFT_DIR), $(patsubst %, %.c, $(LIBFT_FILES)))
 PRINTF_SRCS = $(addprefix $(PRINTF_DIR), $(patsubst %, %.c, $(PRINTF_FILES)))
 SRCS = $(LIBFT_SRCS) $(PRINTF_SRCS)
 OBJS = $(patsubst %, %.o, $(LIBFT_FILES)) $(patsubst %, %.o, $(PRINTF_FILES))
-FLAGS = -I$(INCLUDES_DIR) -I$(LIBFT_DIR)/$(INCLUDES_DIR) -Wall -Werror -Wextra -Wno-format 
+FLAGS = -I$(INCLUDES_DIR) -I$(LIBFT_DIR)/$(INCLUDES_DIR) -Wall -Werror -Wextra 
 
 all: $(NAME)
 

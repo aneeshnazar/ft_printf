@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 23:14:33 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 14:29:24 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/20 16:23:45 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,6 @@ void	set_output(t_able *table)
 	handle_zero(table);
 	handle_space(table);
 	append_sign(table);
+	if (is_good(table))
+		ft_strdel(&table->tmp);
 }

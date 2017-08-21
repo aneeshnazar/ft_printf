@@ -6,30 +6,55 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 15:44:56 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 19:54:17 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 14:39:32 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+char		*ft_copy_until(char *str, int start)
+{
+	char		*out;
+	int			i;
+
+	i = 0;
+	if (!(out = ft_strnew(100)))
+		return (NULL);
+	while (str[start])
+	{
+		out[i] = str[start];
+		++start;
+		if (ft_is_in(out[i], "sSpdDioOuUxXcC") || (out[i] == '%' && i >= 1))
+			break ;
+		++i;
+	}
+	return (out);
+}
+
 t_format	*get_format(char *format, int *num)
 {
 	t_format	*out;
 	int			i;
-	char		**format_strs;
+	int			out_it;
+	char		*str;
 
-	format_strs = get_f_strs(format, num);
-	out = (t_format *)ft_memalloc(sizeof(t_format) * (*num + 1));
 	i = 0;
-	while (i < *num)
+	out_it = 0;
+	*num = ft_countif(format, '%');
+	out = (t_format *)ft_memalloc(sizeof(t_format) * (*num + 1));
+	while (format[i] && out_it < *num)
 	{
-		if (format_strs[i][0] == '%' && format_strs[i]
-			[ft_strlen(format_strs[i]) - 1] == '%')
-			--*num;
-		out[i] = parse_format(format_strs[i]);
-		ft_strdel(&format_strs[i]);
-		++i;
+		if (format[i] == '%' && format[i])
+		{
+			str = ft_copy_until(format, i);
+			if (str[0] == '%' && str[ft_strlen(str) - 1] == '%')
+				--*num;
+			out[out_it++] = parse_format(str);
+			i += ft_strlen(str);
+			ft_strdel(&str);
+		}
+		else
+			++i;
 	}
-	free(format_strs);
 	return (out);
 }

@@ -6,7 +6,7 @@
 #    By: anazar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2017/08/20 13:54:58 by anazar           ###   ########.fr        #
+#    Updated: 2017/08/20 16:19:16 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,26 +16,12 @@ PRINTF_DIR = ./printf/
 INCLUDES_DIR = ./includes/
 LIBFT_H = $(LIBFT_DIR)libft.h
 PRINTF_H = $(INCLUDES_DIR)ft_printf.h
-#LIBFT_FILES =	ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr \
-				ft_memcmp ft_strcat ft_strchr ft_strcpy ft_strdup ft_strlcat \
-				ft_strlen ft_strncat ft_strncpy ft_strrchr ft_strstr ft_strnstr \
-				ft_strcmp ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum \
-				ft_isascii ft_isprint ft_toupper ft_tolower ft_memalloc ft_memdel \
-				ft_strnew ft_strdel ft_strclr ft_striter ft_striteri ft_strmap \
-				ft_strmapi ft_strequ ft_strnequ ft_strsub ft_strtrim ft_strsplit \
-				ft_putchar ft_putstr ft_putnbr ft_putendl \
-				ft_putchar_fd ft_putstr_fd ft_putnbr_fd ft_putendl_fd \
-				ft_strjoin ft_strjoinfree ft_iswhitespace ft_split_by_function ft_split_by_delims \
-				ft_swap ft_isupper ft_islower ft_find_and_replace ft_find \
-				ft_trim_by_function ft_trim_by_delims ft_is_in ft_countif \
-				ft_strfncpy ft_strrncpy ft_max ft_putstrn
 LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_max ft_memalloc \
 				ft_memset ft_putchar ft_putstr ft_putendl ft_putnbr ft_putstrn \
 				ft_strcat ft_strdel ft_strdup ft_strfncpy ft_strjoinfree ft_strlen \
 				ft_strnew ft_strrncpy ft_strsub ft_tolower ft_bzero ft_isupper \
 				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp ft_min
 MAIN = replace is_sign is_neg zero_str is_good
-#GET = get_one_format get_formats generate_table
 GET = get_f_strs get_format generate_table get_width get_sign
 SET = set_char set_int set_uint set_addr set_data set_str \
 	  set_tmp set_tmp_char set_tmp_int set_tmp_str set_tmp_uns \

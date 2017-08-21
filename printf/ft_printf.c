@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:42:15 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 14:26:02 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/20 15:23:18 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	ft_put(t_able *table, int *t, int *i, int *num_chars)
 		*i += ft_strlen(table->format.str);
 		*num_chars += ft_strlen(table->output);
 		++*t;
-		free(table->format.str);
-		free(table->output);
+		ft_strdel(&table->format.str);
+		ft_strdel(&table->output);
 	}
 	else
 	{
 		*i += ft_strlen(table->format.str);
 		++*t;
-		free(table->format.str);
+		ft_strdel(&table->format.str);
 	}
 }
 
@@ -42,8 +42,8 @@ void	ft_put_null(t_able *table, int *t, int *i, int *num_chars)
 	ft_putchar(0);
 	*i += ft_strlen(table->format.str);
 	*num_chars += ft_strlen(table->output) + 1;
-	free(table->format.str);
-	free(table->output);
+	ft_strdel(&table->format.str);
+	ft_strdel(&table->output);
 	++*t;
 }
 

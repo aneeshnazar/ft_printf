@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 19:00:01 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 17:46:35 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 16:13:13 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static int	get_num_precision(t_able *table)
 	{
 		str = zero_str(table->format.precision - ft_strlen(table->tmp));
 		table->tmp = ft_strjoinfree(str, table->tmp);
-		free(str);
 		return (table->format.precision);
 	}
 	else if (TINT == 0 && !(ft_is_in(TYPE, "oO") && F_HASH))

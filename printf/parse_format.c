@@ -6,13 +6,13 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/26 13:39:50 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:38:07 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 16:07:01 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_format		init_format(void)
+static t_format	init_format(void)
 {
 	t_format	n;
 

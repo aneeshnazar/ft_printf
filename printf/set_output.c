@@ -6,13 +6,13 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 23:14:33 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 16:23:45 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 16:08:25 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	handle_output(t_able *table, int precision)
+static void	handle_output(t_able *table, int precision)
 {
 	if (check_minus(table))
 	{
@@ -25,7 +25,7 @@ void	handle_output(t_able *table, int precision)
 		ft_strrncpy(OUTPUT, table->tmp, precision);
 }
 
-void	handle_null(t_able *table)
+static void	handle_null(t_able *table)
 {
 	if (check_minus(table))
 		OUTPUT[0] = 0;
@@ -33,7 +33,7 @@ void	handle_null(t_able *table)
 		OUTPUT[ft_strlen(OUTPUT) - 1] = 0;
 }
 
-void	append_sign(t_able *table)
+static void	append_sign(t_able *table)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ void	append_sign(t_able *table)
 	}
 }
 
-void	set_output(t_able *table)
+void		set_output(t_able *table)
 {
 	int	width;
 	int	precision;

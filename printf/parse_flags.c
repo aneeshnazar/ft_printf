@@ -6,13 +6,13 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 16:29:13 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 22:14:17 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 15:16:56 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void				parse_flags(t_format *t, char *format, int *start)
+void	parse_flags(t_format *t, char *format, int *start)
 {
 	while (ft_is_in(format[*start], "0-+ #"))
 	{

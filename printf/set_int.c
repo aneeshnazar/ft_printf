@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 21:44:50 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/17 16:16:30 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 15:29:57 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	set_int(t_able *table, va_list a_list)
 {
-	if (LENGTH == 3 || LENGTH == 6 || TYPE == 'D')
+	if (LENGTH == L_LONG || LENGTH == L_SIZET || TYPE == 'D')
 		table->data.ld = va_arg(a_list, long);
 	else if (!table->format.length)
 		table->data.d = va_arg(a_list, int);
-	else if (table->format.length == 1)
+	else if (table->format.length == L_SHORT)
 		table->data.hhd = va_arg(a_list, int);
-	else if (table->format.length == 2)
+	else if (table->format.length == L_SCHAR)
 		table->data.hd = va_arg(a_list, int);
-	else if (table->format.length == 4)
+	else if (table->format.length == L_LLONG)
 		table->data.lld = va_arg(a_list, long long);
-	else if (table->format.length == 5)
+	else if (table->format.length == L_INTMAX)
 		table->data.jd = va_arg(a_list, intmax_t);
 }

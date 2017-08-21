@@ -6,7 +6,7 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:01:59 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 13:54:45 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 15:26:20 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@
 # define FORM_SPEC table->format.str
 # define WIDTH table->format.width
 # define OUTPUT table->output
+# define L_SHORT	1
+# define L_SCHAR	2
+# define L_LLONG	3
+# define L_LONG		4
+# define L_INTMAX	5
+# define L_SIZET	6
 
 # include <libft.h>
 # include <stdarg.h>

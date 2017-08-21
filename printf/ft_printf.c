@@ -6,18 +6,18 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:42:15 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 15:23:18 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 15:37:09 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_null(t_able *table)
+static int	is_null(t_able *table)
 {
 	return (TYPE == 'c' && !table->data.c);
 }
 
-void	ft_put(t_able *table, int *t, int *i, int *num_chars)
+static void	ft_put(t_able *table, int *t, int *i, int *num_chars)
 {
 	if (is_good(table))
 	{
@@ -36,7 +36,7 @@ void	ft_put(t_able *table, int *t, int *i, int *num_chars)
 	}
 }
 
-void	ft_put_null(t_able *table, int *t, int *i, int *num_chars)
+static void	ft_put_null(t_able *table, int *t, int *i, int *num_chars)
 {
 	ft_putstr(table->output);
 	ft_putchar(0);
@@ -47,7 +47,7 @@ void	ft_put_null(t_able *table, int *t, int *i, int *num_chars)
 	++*t;
 }
 
-int		print(char *format, t_able *table, int num)
+static int	print(char *format, t_able *table, int num)
 {
 	int	num_chars;
 	int	i;
@@ -76,7 +76,7 @@ int		print(char *format, t_able *table, int num)
 	return (num_chars);
 }
 
-int		ft_printf(const char *format, ...)
+int			ft_printf(const char *format, ...)
 {
 	va_list	a_list;
 	char	*out;

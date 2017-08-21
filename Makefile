@@ -6,7 +6,7 @@
 #    By: anazar <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2017/08/20 16:19:16 by anazar           ###   ########.fr        #
+#    Updated: 2017/08/21 15:35:27 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,13 @@ PRINTF_DIR = ./printf/
 INCLUDES_DIR = ./includes/
 LIBFT_H = $(LIBFT_DIR)libft.h
 PRINTF_H = $(INCLUDES_DIR)ft_printf.h
-LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_max ft_memalloc \
-				ft_memset ft_putchar ft_putstr ft_putendl ft_putnbr ft_putstrn \
+LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_memalloc \
+				ft_memset ft_putchar ft_putstr ft_putendl ft_putnbr ft_max ft_min \
 				ft_strcat ft_strdel ft_strdup ft_strfncpy ft_strjoinfree ft_strlen \
 				ft_strnew ft_strrncpy ft_strsub ft_tolower ft_bzero ft_isupper \
-				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp ft_min
+				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp 
 MAIN = replace is_sign is_neg zero_str is_good
-GET = get_f_strs get_format generate_table get_width get_sign
+GET = get_format generate_table get_width get_sign
 SET = set_char set_int set_uint set_addr set_data set_str \
 	  set_tmp set_tmp_char set_tmp_int set_tmp_str set_tmp_uns \
 	  set_output

@@ -6,13 +6,13 @@
 /*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 15:44:56 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 14:39:32 by anazar           ###   ########.fr       */
+/*   Updated: 2017/08/21 15:15:45 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*ft_copy_until(char *str, int start)
+static char	*ft_copy_until(char *str, int start)
 {
 	char		*out;
 	int			i;

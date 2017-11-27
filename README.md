@@ -23,7 +23,7 @@ z = size_t
 
 As well as these flags:
 
-\# = appends a 0, 0x, or 0X in front of an unsigned integer
+\# = appends a 0, 0x, or 0X in front of an unsigned integer  
 0 = appends or pads a number with 0s  
 \+ = appends a '+' to positive signed integers  
 \- = right-aligns output when specified  

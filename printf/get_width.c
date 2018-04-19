@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_width.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 19:00:01 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 16:13:13 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 23:30:52 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,23 @@ static int	get_precision(t_able *table)
 	}
 	else
 		return (ft_strlen(table->tmp));
+}
+
+char	get_sign(t_able *table)
+{
+	if (ft_is_in(table->format.type, "dDi"))
+	{
+		if (is_neg(table))
+			return ('-');
+		else
+		{
+			if (check_plus(table))
+				return ('+');
+			else if (check_space(table))
+				return (' ');
+		}
+	}
+	return (0);
 }
 
 void		get_width(t_able *table, int *width, int *precision)

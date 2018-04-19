@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:40:00 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 21:52:21 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:23:55 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	set_tmp_int(t_able *table)
 	else if (!table->format.length)
 		table->tmp = ft_jtoa(table->data.d % MOD_U);
 	else if (table->format.length == L_SHORT)
-		table->tmp = ft_jtoa(table->data.hhd % MOD_SH);
+		table->tmp = ft_jtoa(table->data.hd % MOD_SH);
 	else if (table->format.length == L_SCHAR)
-		table->tmp = ft_jtoa(table->data.hd % MOD_SC);
+		table->tmp = ft_jtoa(table->data.hhd % MOD_SC);
 	//else if (table->format.length == L_LLONG)
 	//	table->tmp = ft_jtoa(table->data.lld);
 	//else if (table->format.length == L_INTMAX)

@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:47:06 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 20:42:39 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:23:43 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	set_tmp_uns(t_able *table)
 	else if (!table->format.length)
 		table->tmp = ft_jutoa(table->data.u % MOD_U, table->format.type);
 	else if (table->format.length == L_SHORT)
-		table->tmp = ft_jutoa(table->data.hhu % MOD_SH, table->format.type);
+		table->tmp = ft_jutoa(table->data.hu % MOD_SH, table->format.type);
 	else if (table->format.length == L_SCHAR)
-		table->tmp = ft_jutoa(table->data.hu % MOD_SC, table->format.type);
+		table->tmp = ft_jutoa(table->data.hhu % MOD_SC, table->format.type);
 	//else if (table->format.length == L_LLONG || table->format.length == L_INTMAX || table->format.length == L_SIZET)
 	//	table->tmp = ft_jutoa(table->data.llu, table->format.type);
 	//else if (table->format.length == L_INTMAX)

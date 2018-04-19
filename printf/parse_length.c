@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_length.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 16:32:35 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:33:45 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:22:15 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void	length_val(t_format *t, char *format, int *start)
 	if (format[*start] == 'h')
 	{
 		if (format[*start + 1] == 'h')
-			t->length = L_SHORT;
-		else
 			t->length = L_SCHAR;
+		else
+			t->length = L_SHORT;
 	}
 	else if (format[*start] == 'l')
 	{
@@ -41,7 +41,7 @@ int			parse_length(t_format *t, char *format, int *start)
 	else if (ft_is_in(format[*start], "hljz"))
 	{
 		length_val(t, format, start);
-		if (t->length == L_SHORT || t->length == L_LLONG)
+		if (t->length == L_SCHAR || t->length == L_LLONG)
 			*start += 2;
 		else
 			*start += 1;

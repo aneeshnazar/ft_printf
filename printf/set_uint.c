@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_uint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 22:03:19 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:26:49 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:22:56 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void		set_uint(t_able *table, va_list a_list)
 		table->data.lu = va_arg(a_list, unsigned long int);
 	else if (!table->format.length)
 		table->data.u = va_arg(a_list, unsigned int);
-	else if (table->format.length == L_SHORT)
-		table->data.hhu = va_arg(a_list, unsigned int);
 	else if (table->format.length == L_SCHAR)
+		table->data.hhu = va_arg(a_list, unsigned int);
+	else if (table->format.length == L_SHORT)
 		table->data.hu = va_arg(a_list, unsigned int);
 	else if (table->format.length == L_LLONG)
 		table->data.llu = va_arg(a_list, unsigned long long int);

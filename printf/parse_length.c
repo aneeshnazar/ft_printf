@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 16:32:35 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 22:42:09 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:45:32 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,11 @@ int			parse_length(t_format *t, char *format, int *start)
 	else if (ft_is_in(format[*start], "hljz"))
 	{
 		length_val(t, format, start);
-		if (t->length == L_SCHAR || t->length == L_LLONG)
-			*start += 2;
-		else
-			*start += 1;
+		*start += (t->length == L_SCHAR || t->length == L_LLONG) ? 2 : 1;
+//		if (t->length == L_SCHAR || t->length == L_LLONG)
+//			*start += 2;
+//		else
+//			*start += 1;
 		return (1);
 	}
 	else

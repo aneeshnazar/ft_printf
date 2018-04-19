@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_output.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 23:14:33 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 16:08:25 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 23:24:54 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,23 @@ static void	append_sign(t_able *table)
 		else if (i == 0 && !ft_is_in(OUTPUT[i], "123456789"))
 			OUTPUT[i] = get_sign(table);
 	}
+}
+
+void		set_data(t_able *table, va_list a_list)
+{
+	if (ft_is_in(table->format.type, "sS"))
+		set_str(table, a_list);
+	else if (ft_is_in(table->format.type, "dDi"))
+		set_int(table, a_list);
+	else if (table->format.type == 'p')
+		set_addr(table, a_list);
+	else if (ft_is_in(table->format.type, "uUoOxX"))
+		set_uint(table, a_list);
+	else if (ft_is_in(table->format.type, "cC%"))
+		set_char(table, a_list);
+	else
+		set_char(table, a_list);
+	set_tmp(table);
 }
 
 void		set_output(t_able *table)

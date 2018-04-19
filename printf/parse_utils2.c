@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_length.c                                     :+:      :+:    :+:   */
+/*   parse_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 16:32:35 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 23:33:27 by anazar           ###   ########.fr       */
+/*   Created: 2018/04/18 23:35:16 by anazar            #+#    #+#             */
+/*   Updated: 2018/04/18 23:35:58 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,50 @@ int			parse_length(t_format *t, char *format, int *start)
 	{
 		t->is_good = 0;
 		return (-1);
+	}
+}
+
+int				parse_type(t_format *t, char *format, int *start)
+{
+	if (ft_is_in(format[*start], "sSpdDioOuUxXcC") ||
+		(format[*start] == '%' && *start >= 1))
+	{
+		t->type = format[*start];
+		++*start;
+		return (1);
+	}
+	else
+	{
+		t->is_good = 0;
+		return (-1);
+	}
+}
+
+void			parse_precision(t_format *t, char *format, int *start)
+{
+	int			tmp;
+
+	tmp = *start;
+	if (format[tmp] == '.')
+	{
+		++tmp;
+		while (ft_isdigit(format[tmp]))
+			++tmp;
+		t->precision = ft_atoi(&format[*start + 1]);
+		*start = tmp;
+	}
+}
+
+void			parse_width(t_format *t, char *format, int *start)
+{
+	int			tmp;
+
+	tmp = *start;
+	if (ft_isdigit(format[tmp]))
+	{
+		while (ft_isdigit(format[tmp]))
+			++tmp;
+		t->width = ft_atoi(&format[*start]);
+		*start = tmp;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_tmp_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:33:34 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/20 16:24:25 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 23:04:13 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 void	set_tmp_str(t_able *table)
 {
 	if (table->format.type == 's' && !table->format.length)
-	{
-		if (!table->data.s)
-			table->tmp = ft_strdup("(null)");
-		else
-			table->tmp = ft_strdup(table->data.s);
-	}
+		table->tmp = (!table->data.s) ? ft_strdup("(null)") :
+			ft_strdup(table->data.s);
 	else
 		table->wtmp = table->data.ls;
 }

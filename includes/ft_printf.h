@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:01:59 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:26:20 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 23:06:31 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 # define L_LONG		4
 # define L_INTMAX	5
 # define L_SIZET	6
+# define MOD_U		0x100000000
+# define MOD_SC		0x100
+# define MOD_SH		0x10000
 
 # include <libft.h>
 # include <stdarg.h>

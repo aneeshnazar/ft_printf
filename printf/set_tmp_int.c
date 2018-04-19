@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:40:00 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 22:23:55 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 23:05:12 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 
 void	set_tmp_int(t_able *table)
 {
-	if (LENGTH == L_LONG || LENGTH == L_SIZET || TYPE == 'D' || table->format.length == L_LLONG || table->format.length == L_INTMAX)
+	if (LENGTH == L_LONG || LENGTH == L_SIZET || TYPE == 'D' ||
+		table->format.length == L_LLONG ||
+		table->format.length == L_INTMAX)
 		table->tmp = ft_jtoa(table->data.ld);
 	else if (!table->format.length)
 		table->tmp = ft_jtoa(table->data.d % MOD_U);
@@ -26,8 +28,4 @@ void	set_tmp_int(t_able *table)
 		table->tmp = ft_jtoa(table->data.hd % MOD_SH);
 	else if (table->format.length == L_SCHAR)
 		table->tmp = ft_jtoa(table->data.hhd % MOD_SC);
-	//else if (table->format.length == L_LLONG)
-	//	table->tmp = ft_jtoa(table->data.lld);
-	//else if (table->format.length == L_INTMAX)
-	//	table->tmp = ft_jtoa(table->data.jd);
 }

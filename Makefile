@@ -6,7 +6,7 @@
 #    By: anazar <anazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2018/04/18 22:54:42 by anazar           ###   ########.fr        #
+#    Updated: 2018/04/18 23:09:22 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,15 +23,14 @@ LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_memalloc \
 				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp
 MAIN = is_sign is_neg zero_str is_good
 GET = get_format generate_table get_width get_sign
-SET = set_type set_data set_output \
-	  set_tmp set_tmp_char set_tmp_int set_tmp_str set_tmp_uns
-	  #set_char set_int set_uint set_addr set_str
-CHECK = check_plus check_minus check_space handle_hash handle_zero fix_sign handle_space
+SET = set_type set_data set_output set_tmp
+CHECK = check_plus check_minus check_space fix_sign handle
 PARSE = parse_flags parse_width parse_length parse_precision parse_type parse_format
 CONV = 	ft_jtoa ft_jutoa ft_ctos ft_wctos
 
-DEAD_FILES = #replace ft_itoa ft_hhtoa ft_htoa ft_lltoa ft_ltoa ft_jtoa ft_ztoa \
-			ft_utoa ft_hhutoa ft_hutoa ft_llutoa ft_lutoa ft_jutoa ft_zutoa
+DEAD_FILES = replace ft_itoa ft_hhtoa ft_htoa ft_lltoa ft_ltoa ft_jtoa ft_ztoa \
+			ft_utoa ft_hhutoa ft_hutoa ft_llutoa ft_lutoa ft_jutoa ft_zutoa \
+			set_char set_int set_uint set_addr set_str #handle_hash handle_zero handle_space set_tmp_char set_tmp_int set_tmp_str set_tmp_uns
 
 PRINTF_FILES = ft_printf $(MAIN) $(GET) $(SET) $(PARSE) $(CONV) $(CHECK)
 

@@ -6,7 +6,7 @@
 #    By: anazar <anazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2018/04/18 22:25:40 by anazar           ###   ########.fr        #
+#    Updated: 2018/04/18 22:27:37 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ SET = set_char set_int set_uint set_addr set_data set_str \
 	  set_output
 CHECK = check_plus check_minus check_space handle_hash handle_zero fix_sign handle_space
 PARSE = parse_flags parse_width parse_length parse_precision parse_type parse_format
-CONV = 	ft_jtoa ft_jutoa#ft_itoa ft_hhtoa ft_htoa ft_lltoa ft_ltoa ft_jtoa ft_ztoa \
+CONV = 	ft_jtoa ft_jutoa ft_ctos ft_wctos#ft_itoa ft_hhtoa ft_htoa ft_lltoa ft_ltoa ft_jtoa ft_ztoa \
 		ft_utoa ft_hhutoa ft_hutoa ft_llutoa ft_lutoa ft_jutoa ft_zutoa \
-		ft_ctos ft_wctos
+
 PRINTF_FILES = ft_printf $(MAIN) $(GET) $(SET) $(PARSE) $(CONV) $(CHECK)
 
 LIBFT_SRCS = $(addprefix $(LIBFT_DIR), $(patsubst %, %.c, $(LIBFT_FILES)))

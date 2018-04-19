@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 16:32:35 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 22:22:15 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:42:09 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 static void	length_val(t_format *t, char *format, int *start)
 {
+	if (format[*start] == 'h')
+		t->length = (format[*start + 1] == 'h') ? L_SCHAR : L_SHORT;
+	else if (format[*start] == 'l')
+		t->length = (format[*start + 1] == 'l') ? L_LLONG : L_LONG;
+	else
+		t->length = (format[*start] == 'j') ? L_INTMAX : L_SIZET;
+	/*
 	if (format[*start] == 'h')
 	{
 		if (format[*start + 1] == 'h')
@@ -32,6 +39,7 @@ static void	length_val(t_format *t, char *format, int *start)
 		t->length = L_INTMAX;
 	else
 		t->length = L_SIZET;
+		*/
 }
 
 int			parse_length(t_format *t, char *format, int *start)

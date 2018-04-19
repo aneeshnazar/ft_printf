@@ -6,7 +6,7 @@
 /*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 22:03:19 by anazar            #+#    #+#             */
-/*   Updated: 2018/04/18 22:22:56 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 22:37:21 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ void		set_uint(t_able *table, va_list a_list)
 {
 	if (ft_is_in(table->format.type, "UO") || table->format.length == L_LONG)
 		table->data.lu = va_arg(a_list, unsigned long int);
-	else if (!table->format.length)
+	else if (!table->format.length ||
+			table->format.length == L_SCHAR ||
+			table->format.length == L_SHORT)
 		table->data.u = va_arg(a_list, unsigned int);
-	else if (table->format.length == L_SCHAR)
-		table->data.hhu = va_arg(a_list, unsigned int);
-	else if (table->format.length == L_SHORT)
-		table->data.hu = va_arg(a_list, unsigned int);
+	//else if (table->format.length == L_SCHAR)
+	//	table->data.hhu = va_arg(a_list, unsigned int);
+	//else if (table->format.length == L_SHORT)
+	//	table->data.hu = va_arg(a_list, unsigned int);
 	else if (table->format.length == L_LLONG)
 		table->data.llu = va_arg(a_list, unsigned long long int);
 	else if (table->format.length == L_INTMAX)

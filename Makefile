@@ -6,7 +6,7 @@
 #    By: anazar <anazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 13:20:16 by anazar            #+#    #+#              #
-#    Updated: 2018/04/18 23:36:38 by anazar           ###   ########.fr        #
+#    Updated: 2018/04/18 23:42:03 by anazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ LIBFT_FILES =	ft_atoi ft_countif ft_find ft_is_in ft_isdigit ft_memalloc \
 				ft_strcat ft_strdel ft_strdup ft_strfncpy ft_strjoinfree ft_strlen \
 				ft_strnew ft_strrncpy ft_strsub ft_tolower ft_bzero ft_isupper \
 				ft_iswhitespace ft_strcpy ft_strjoin ft_strncmp
+MAIN = ft_printf
 GET = get_format generate_table get_width
 SET = set_type set_output set_tmp
 CHECK = fix_sign handle utils check
@@ -31,9 +32,10 @@ DEAD_FILES = replace ft_itoa ft_hhtoa ft_htoa ft_lltoa ft_ltoa ft_jtoa ft_ztoa \
 			ft_utoa ft_hhutoa ft_hutoa ft_llutoa ft_lutoa ft_jutoa ft_zutoa \
 			set_char set_int set_uint set_addr set_str handle_hash handle_zero \
 			handle_space set_tmp_char set_tmp_int set_tmp_str set_tmp_uns is_sign \
-			is_neg zero_str is_good set_data check_plus check_minus check_space get_sign#parse_flags parse_width parse_length parse_precision parse_type parse_format
+			is_neg zero_str is_good set_data check_plus check_minus check_space get_sign \
+			parse_flags parse_width parse_length parse_precision parse_type parse_format
 
-PRINTF_FILES = ft_printf $(GET) $(SET) $(PARSE) $(CONV) $(CHECK) # $(MAIN)
+PRINTF_FILES = $(GET) $(SET) $(PARSE) $(CONV) $(CHECK) $(MAIN)
 
 LIBFT_SRCS = $(addprefix $(LIBFT_DIR), $(patsubst %, %.c, $(LIBFT_FILES)))
 PRINTF_SRCS = $(addprefix $(PRINTF_DIR), $(patsubst %, %.c, $(PRINTF_FILES)))

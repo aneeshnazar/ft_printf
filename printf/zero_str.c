@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zero_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/19 15:19:58 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/19 15:20:32 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 19:20:06 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ char		*zero_str(int num)
 {
 	char	*str;
 
-	if (!(str = ft_strnew(num)))
+	if (!(str = (char *)malloc(num + 1)))
 		return (NULL);
 	ft_memset(str, '0', num);
+	str[num] = 0;
 	return (str);
 }

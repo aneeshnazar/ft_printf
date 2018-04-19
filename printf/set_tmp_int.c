@@ -3,27 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   set_tmp_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:40:00 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:28:08 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 21:52:21 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+#define MOD_U 0x100000000
+#define MOD_SC 0x100
+#define MOD_SH 0x10000
+
 void	set_tmp_int(t_able *table)
 {
-	if (LENGTH == L_LONG || LENGTH == L_SIZET || TYPE == 'D')
-		table->tmp = ft_ltoa(table->data.ld);
+	if (LENGTH == L_LONG || LENGTH == L_SIZET || TYPE == 'D' || table->format.length == L_LLONG || table->format.length == L_INTMAX)
+		table->tmp = ft_jtoa(table->data.ld);
 	else if (!table->format.length)
-		table->tmp = ft_itoa(table->data.d);
+		table->tmp = ft_jtoa(table->data.d % MOD_U);
 	else if (table->format.length == L_SHORT)
-		table->tmp = ft_hhtoa(table->data.hhd);
+		table->tmp = ft_jtoa(table->data.hhd % MOD_SH);
 	else if (table->format.length == L_SCHAR)
-		table->tmp = ft_htoa(table->data.hd);
-	else if (table->format.length == L_LLONG)
-		table->tmp = ft_lltoa(table->data.lld);
-	else if (table->format.length == L_INTMAX)
-		table->tmp = ft_jtoa(table->data.jd);
+		table->tmp = ft_jtoa(table->data.hd % MOD_SC);
+	//else if (table->format.length == L_LLONG)
+	//	table->tmp = ft_jtoa(table->data.lld);
+	//else if (table->format.length == L_INTMAX)
+	//	table->tmp = ft_jtoa(table->data.jd);
 }

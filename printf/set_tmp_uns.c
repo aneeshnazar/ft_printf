@@ -3,34 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   set_tmp_uns.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anazar <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: anazar <anazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 19:47:06 by anazar            #+#    #+#             */
-/*   Updated: 2017/08/21 15:28:53 by anazar           ###   ########.fr       */
+/*   Updated: 2018/04/18 20:42:39 by anazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+#define MOD_U 0x100000000
+#define MOD_SC 0x100
+#define MOD_SH 0x10000
+
 void	set_tmp_uns(t_able *table)
 {
-	if (ft_is_in(table->format.type, "UO") || table->format.length == L_LONG)
-		table->tmp = ft_lutoa(table->data.lu, table->format.type);
+	if (ft_is_in(table->format.type, "UO") ||
+		table->format.length == L_LONG ||
+		table->format.length == L_LLONG ||
+		table->format.length == L_INTMAX ||
+		table->format.length == L_SIZET)
+		table->tmp = ft_jutoa(table->data.lu, table->format.type);
 	else if (table->format.type == 'p')
 	{
-		table->tmp = ft_lutoa(table->data.lu, 'x');
+		table->tmp = ft_jutoa(table->data.lu, 'x');
 		table->format.f_hash = 1;
 	}
 	else if (!table->format.length)
-		table->tmp = ft_utoa(table->data.u, table->format.type);
+		table->tmp = ft_jutoa(table->data.u % MOD_U, table->format.type);
 	else if (table->format.length == L_SHORT)
-		table->tmp = ft_hhutoa(table->data.hhu, table->format.type);
+		table->tmp = ft_jutoa(table->data.hhu % MOD_SH, table->format.type);
 	else if (table->format.length == L_SCHAR)
-		table->tmp = ft_hutoa(table->data.hu, table->format.type);
-	else if (table->format.length == L_LLONG)
-		table->tmp = ft_llutoa(table->data.llu, table->format.type);
-	else if (table->format.length == L_INTMAX)
-		table->tmp = ft_jutoa(table->data.ju, table->format.type);
-	else if (table->format.length == L_SIZET)
-		table->tmp = ft_zutoa(table->data.z, table->format.type);
+		table->tmp = ft_jutoa(table->data.hu % MOD_SC, table->format.type);
+	//else if (table->format.length == L_LLONG || table->format.length == L_INTMAX || table->format.length == L_SIZET)
+	//	table->tmp = ft_jutoa(table->data.llu, table->format.type);
+	//else if (table->format.length == L_INTMAX)
+	//	table->tmp = ft_jutoa(table->data.ju, table->format.type);
+	//else if (table->format.length == L_SIZET)
+	//	table->tmp = ft_jutoa(table->data.z, table->format.type);
 }
